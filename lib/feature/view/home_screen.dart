@@ -13,6 +13,7 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final bookNotifier = ref.read(MyNotifiers.instance.books);
     final themeNotifer = ref.read(MyNotifiers.instance.theme);
+    bookNotifier.initBook();
     return Scaffold(
       appBar: _buildAppBar(context, themeNotifer, title: Text('Book Library'), ref: ref),
       body: Container(
@@ -47,6 +48,7 @@ class HomeScreen extends ConsumerWidget {
   AppBar _buildAppBar(BuildContext context, ThemeNotifier themeNotifier, {Widget? title, required WidgetRef ref}) {
     return AppBar(
       title: title,
+      backgroundColor: Theme.of(context).primaryColorDark,
       actions: [
         IconButton(
           icon: themeNotifier.darkModeEnabled ? Icon(Icons.brightness_7) : Icon(Icons.brightness_2),

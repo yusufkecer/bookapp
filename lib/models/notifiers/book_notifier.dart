@@ -20,10 +20,7 @@ class BookNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  initBook() {
-    if (_books == null) {
-      _books = [];
-    }
+  void initBook() {
     _books = initialBooks;
   }
 

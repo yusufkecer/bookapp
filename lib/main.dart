@@ -1,4 +1,5 @@
-import 'package:bookapp/models/notifiers/theme_notifier.dart';
+import 'package:bookapp/core/my_notifiers.dart';
+import 'package:bookapp/core/theme/theme.dart';
 import 'package:bookapp/feature/view/home_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -19,15 +20,15 @@ class BookLibrary extends StatelessWidget {
 }
 
 class MaterialAppWithTheme extends ConsumerWidget {
-  final libraryTheme = ChangeNotifierProvider<ThemeNotifier>((ref) => ThemeNotifier());
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeNotifier = ref.watch(libraryTheme);
+    final themeNotifier = ref.watch(MyNotifiers.instance.theme);
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Book Library',
       darkTheme: ThemeData.dark(),
-      theme: themeNotifier.darkModeEnabled ? ThemeData.dark() : ThemeData.light(),
+      theme: themeNotifier.darkModeEnabled ? MyTheme.baseDark : MyTheme.baseLight,
       home: HomeScreen(),
     );
   }

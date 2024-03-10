@@ -6,8 +6,7 @@ class Book {
   String category;
   num rating;
 
-  Book(this.title, this.author, this.description, this.coverUrl, this.category,
-      this.rating);
+  Book(this.title, this.author, this.description, this.coverUrl, this.category, this.rating);
 }
 
 final initialBooks = [
@@ -31,7 +30,7 @@ final initialBooks = [
     'The Sun, the Moon, the Stars',
     'Junot Diaz',
     'Winner of the Pulitzer Prize',
-    'https://pro2-bar-s3-cdn-cf4.myportfolio.com/2e52194b029a65d876d57172b412d63e/5a0ce3f3-5f59-4098-8d45-93a73cf2800c_rw_1200.png?h=40a11543bd7bdc2d8e956150e3a5af2c',
+    'https://i1.sndcdn.com/artworks-000206897848-eylpix-t500x500.jpg',
     'Drama',
     6.7,
   ),

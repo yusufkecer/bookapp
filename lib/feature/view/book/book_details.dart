@@ -153,7 +153,7 @@ class BookDetails extends ConsumerWidget {
   SpeedDialChild _buildSubFab(String label, IconData iconData, Function() onTap) {
     return SpeedDialChild(
       label: label,
-      labelStyle: TextStyle(color: kTextTitleColor),
+      labelStyle: TextStyle(color: ColorData.kTextTitleColor),
       child: Icon(iconData),
       onTap: onTap,
     );
