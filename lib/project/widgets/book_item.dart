@@ -1,6 +1,6 @@
 import 'package:bookapp/models/book.dart';
 import 'package:bookapp/models/notifiers/book_notifier.dart';
-import 'package:bookapp/feature/screens/book/book_details.dart';
+import 'package:bookapp/feature/view/book/book_details.dart';
 import 'package:bookapp/core/style.dart';
 import 'package:bookapp/project/widgets/book_cover.dart';
 import 'package:flutter/material.dart';

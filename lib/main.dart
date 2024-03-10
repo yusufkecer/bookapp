@@ -1,5 +1,5 @@
 import 'package:bookapp/models/notifiers/theme_notifier.dart';
-import 'package:bookapp/feature/screens/home_screen.dart';
+import 'package:bookapp/feature/view/home_screen.dart';
 
 import 'package:flutter/material.dart';
 
