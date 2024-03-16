@@ -26,7 +26,7 @@ class MaterialAppWithTheme extends ConsumerWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Book Library',
+      title: "Book Library",
       darkTheme: ThemeData.dark(),
       theme: themeNotifier.darkModeEnabled ? MyTheme.baseDark : MyTheme.baseLight,
       home: HomeScreen(),

@@ -4,6 +4,7 @@ import 'package:bookapp/models/book.dart';
 import 'package:bookapp/models/notifiers/book_notifier.dart';
 import 'package:bookapp/feature/view/book/book_add.dart';
 import 'package:bookapp/core/style.dart';
+import 'package:bookapp/project/string.dart';
 
 import 'package:bookapp/project/widgets/book_cover.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class BookDetails extends ConsumerWidget {
     final themeNotifier = ref.read(MyNotifiers.instance.theme);
 
     return Scaffold(
-      appBar: MediaQuery.of(context).size.width < wideLayoutThreshold ? _buildAppBar(context) : null,
+      appBar: MediaQuery.of(context).size.width < Layout.wideLayoutThreshold ? _buildAppBar(context) : null,
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Container(
@@ -102,24 +103,24 @@ class BookDetails extends ConsumerWidget {
           ),
         ),
       ),
-      floatingActionButton: MediaQuery.of(context).size.width > wideLayoutThreshold
+      floatingActionButton: MediaQuery.of(context).size.width > Layout.wideLayoutThreshold
           ? SpeedDial(
               overlayOpacity: 0.25,
               overlayColor: themeNotifier.darkModeEnabled ? Colors.black : Colors.white,
               animatedIcon: AnimatedIcons.home_menu,
               children: [
                 _buildSubFab(
-                  'Remove',
+                  StringData.delete,
                   Icons.delete,
                   () => _showDeleteDialog(
                     context,
                     ref.read(MyNotifiers.instance.books),
                   ),
                 ),
-                _buildSubFab('Edit', Icons.edit,
+                _buildSubFab(StringData.editBook, Icons.edit,
                     () => Navigator.push(context, MaterialPageRoute(builder: (_) => BookAdd(book: _book)))),
-                _buildSubFab(
-                    'Add', Icons.add, () => Navigator.push(context, MaterialPageRoute(builder: (_) => BookAdd())))
+                _buildSubFab(StringData.add, Icons.add,
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => BookAdd())))
               ],
             )
           : FloatingActionButton(
@@ -131,7 +132,7 @@ class BookDetails extends ConsumerWidget {
 
   AppBar _buildAppBar(BuildContext context) {
     return AppBar(
-      title: Text('Details'),
+      title: Text(StringData.bookDetails),
       actions: <Widget>[
         IconButton(
           icon: Icon(

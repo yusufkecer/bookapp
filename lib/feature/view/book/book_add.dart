@@ -1,5 +1,6 @@
 import 'package:bookapp/core/my_notifiers.dart';
 import 'package:bookapp/models/book.dart';
+import 'package:bookapp/project/string.dart';
 import 'package:bookapp/project/widgets/buttons/confirm_button.dart';
 import 'package:bookapp/project/widgets/inputs/book_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class BookAdd extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(book == null ? 'Add a book' : 'Update book'),
+        title: Text(book == null ? StringData.addBook : StringData.editBook),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -37,17 +38,17 @@ class AddBookForm extends ConsumerStatefulWidget {
 
 class _AddBookFormState extends ConsumerState<AddBookForm> {
   final _formKey = GlobalKey<FormState>();
-  var _title = '';
-  var _author = '';
-  var _description = '';
-  var _rating;
-  var _coverUrl = '';
-  var _category = '';
+  String _title = '';
+  String _author = '';
+  String _description = '';
+  double? _rating;
+  String _coverUrl = '';
+  String _category = '';
 
   @override
   void initState() {
     super.initState();
-    _rating = widget.book?.rating ?? 0.0;
+    _rating = double.tryParse((widget.book?.rating).toString()) ?? 0.0;
   }
 
   @override
@@ -58,45 +59,45 @@ class _AddBookFormState extends ConsumerState<AddBookForm> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           BookTextFormField(
-            labelText: 'Title',
-            errorText: 'Enter a book title',
+            labelText: StringData.title,
+            errorText: StringData.enterTitle,
             initialValue: widget.book?.title,
             onSaved: (value) => _title = value!,
           ),
           BookTextFormField(
-            labelText: 'Author',
-            errorText: 'Enter an author',
+            labelText: StringData.author,
+            errorText: StringData.enterAuthor,
             onSaved: (value) => _author = value!,
             initialValue: widget.book?.author,
           ),
           BookTextFormField(
-            labelText: 'Description',
-            errorText: 'Enter a description',
+            labelText: StringData.description,
+            errorText: StringData.enterDescription,
             initialValue: widget.book?.description,
             onSaved: (value) => _description = value!,
           ),
           BookTextFormField(
-            labelText: 'Cover url',
-            errorText: 'Enter a cover url',
+            labelText: StringData.coverUrl,
+            errorText: StringData.coverUrl,
             initialValue: widget.book?.coverUrl,
             onSaved: (value) => _coverUrl = value!,
           ),
           BookTextFormField(
-            labelText: 'Category',
-            errorText: 'Enter a category',
+            labelText: StringData.category,
+            errorText: StringData.enterCategory,
             initialValue: widget.book?.category,
             onSaved: (value) => _category = value!,
           ),
           InputDecorator(
             decoration: InputDecoration(
-              labelText: 'Rating',
+              labelText: StringData.rating,
               labelStyle: TextStyle(color: Colors.grey),
               suffixIcon: Chip(
-                label: Text(_rating.toStringAsFixed(1)),
+                label: Text(_rating!.toStringAsFixed(1)),
               ),
             ),
             child: Slider(
-              value: _rating.roundToDouble(),
+              value: _rating!.roundToDouble(),
               min: 0.0,
               max: 10.0,
               divisions: 10,
@@ -106,14 +107,14 @@ class _AddBookFormState extends ConsumerState<AddBookForm> {
           Padding(
             padding: const EdgeInsets.only(top: 22.0),
             child: ConfirmButton(
-              text: widget.book == null ? 'Add Book' : 'Update Book',
+              text: widget.book == null ? StringData.addBook : StringData.editBook,
               onPressed: () {
                 if (_formKey.currentState == null) {
                   return;
                 }
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  final book = Book(_title, _author, _description, _coverUrl, _category, _rating);
+                  final book = Book(_title, _author, _description, _coverUrl, _category, _rating as num);
 
                   if (widget.book == null) {
                     ref.watch(MyNotifiers.instance.books).removeBook(book);

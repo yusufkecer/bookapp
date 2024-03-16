@@ -18,7 +18,7 @@ class BookItem extends ConsumerWidget {
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
       onTap: () {
-        if (MediaQuery.of(context).size.width > wideLayoutThreshold) {
+        if (MediaQuery.of(context).size.width > Layout.wideLayoutThreshold) {
           bookNotifier.selectedIndex = bookNotifier.books.indexOf(_book);
         } else {
           Navigator.push(context, MaterialPageRoute(builder: (_) => BookDetails(_book)));
@@ -39,7 +39,7 @@ class BookItem extends ConsumerWidget {
               flex: 6,
               child: Container(
                 decoration: bookNotifier.selectedIndex == bookNotifier.books.indexOf(_book) &&
-                        MediaQuery.of(context).size.width > wideLayoutThreshold
+                        MediaQuery.of(context).size.width > Layout.wideLayoutThreshold
                     ? BoxDecoration(
                         border: Border(
                           right: BorderSide(

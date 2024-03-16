@@ -4,6 +4,7 @@ import 'package:bookapp/feature/view/book/book_add.dart';
 import 'package:bookapp/models/book.dart';
 import 'package:bookapp/feature/view/book/book_details.dart';
 import 'package:bookapp/models/notifiers/theme_notifier.dart';
+import 'package:bookapp/project/string.dart';
 import 'package:bookapp/project/widgets/book_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,9 +16,9 @@ class HomeScreen extends ConsumerWidget {
     final themeNotifer = ref.read(MyNotifiers.instance.theme);
     bookNotifier.initBook();
     return Scaffold(
-      appBar: _buildAppBar(context, themeNotifer, title: Text('Book Library'), ref: ref),
+      appBar: _buildAppBar(context, themeNotifer, title: Text(StringData.library), ref: ref),
       body: Container(
-        child: MediaQuery.of(context).size.width > wideLayoutThreshold
+        child: MediaQuery.of(context).size.width > Layout.wideLayoutThreshold
             ? Row(
                 children: <Widget>[
                   Flexible(
@@ -34,7 +35,7 @@ class HomeScreen extends ConsumerWidget {
               )
             : BookList(),
       ),
-      floatingActionButton: MediaQuery.of(context).size.width < wideLayoutThreshold
+      floatingActionButton: MediaQuery.of(context).size.width < Layout.wideLayoutThreshold
           ? FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: () {
