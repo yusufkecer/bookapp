@@ -2,31 +2,36 @@ import 'dart:ui';
 
 class ColorData {
   const ColorData._();
-  static const kPrimaryColor = Color(0xFFFFFFFF);
+  static const Color kPrimaryColor = Color(0xFFFFFFFF);
 
-  static const kPrimaryLight = Color(0xFFA3E82);
+  static const Color kPrimaryLight = Color(0xFFA3E82);
 
-  static const kAccentColor = Color(0xFF005DFF);
+  static const Color kAccentColor = Color(0xFF005DFF);
 
-  static const kGreyColor = Color(0xFF6E6E6E);
+  static const Color kGreyColor = Color(0xFF6E6E6E);
 
-  static const kTextTitleColor = Color(0xFF1B1B1B);
+  static const Color kTextTitleColor = Color(0xFF1B1B1B);
 
-  static const kYellow = Color(0xFFFFB503);
-  static const kErrorColor = Color(0xFFFF2D2D);
+  static const Color kYellow = Color(0xFFFFB503);
+  static const Color kErrorColor = Color(0xFFFF2D2D);
 
 // Dark Theme
-  static const kPrimaryColorDark = Color(0xFF1E1E1E);
+  static const Color kPrimaryColorDark = Color(0xFF1E1E1E);
 
-  static const kPrimaryLightDark = Color(0xFF212121);
+  static const Color kPrimaryLightDark = Color(0xFF212121);
 
-  static const kAccentColorDark = Color(0xFF317CFF);
+  static const Color kAccentColorDark = Color(0xFF317CFF);
 
-  static const kGreyColorDark = Color(0xFFB3B3B3);
+  static const Color kGreyColorDark = Color(0xFFB3B3B3);
 
-  static const kTextTitleColorDark = Color(0xFFF6F6F6);
+  static const Color kTextTitleColorDark = Color(0xFFF6F6F6);
 
-  static const kYellowDark = Color(0xFFFFB503);
+  static const Color kYellowDark = Color(0xFFFFB503);
 
-  static const kErrorColorDark = Color(0xFFFF5454);
+  static const Color kErrorColorDark = Color(0xFFFF5454);
+
+  static const Color black = Color(0xFF191555);
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color bgColor = Color(0xFF4448FF);
+  static const Color selectColor = Color(0xFF4B3FFF);
 }

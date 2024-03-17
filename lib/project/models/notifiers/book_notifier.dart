@@ -1,4 +1,4 @@
-import 'package:bookapp/models/book.dart';
+import 'package:bookapp/project/models/book.dart';
 import 'package:flutter/widgets.dart';
 
 /// Class used to manage the state in the app

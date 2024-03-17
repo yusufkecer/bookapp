@@ -1,5 +1,5 @@
 import 'package:bookapp/core/my_notifiers.dart';
-import 'package:bookapp/models/book.dart';
+import 'package:bookapp/project/models/book.dart';
 import 'package:bookapp/project/widgets/book_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

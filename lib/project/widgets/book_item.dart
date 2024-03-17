@@ -1,5 +1,5 @@
-import 'package:bookapp/models/book.dart';
-import 'package:bookapp/models/notifiers/book_notifier.dart';
+import 'package:bookapp/project/models/book.dart';
+import 'package:bookapp/project/models/notifiers/book_notifier.dart';
 import 'package:bookapp/feature/view/book/book_details.dart';
 import 'package:bookapp/core/style.dart';
 import 'package:bookapp/project/widgets/book_cover.dart';
@@ -65,7 +65,9 @@ class BookItem extends ConsumerWidget {
                           padding: const EdgeInsets.only(top: 10.0),
                           child: Text(
                             'By ${_book.author}',
-                            style: Theme.of(context).textTheme.bodySmall,
+                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                  color: Theme.of(context).colorScheme.secondary,
+                                ),
                           ),
                         ),
                       ],

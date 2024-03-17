@@ -1,5 +1,5 @@
 import 'package:bookapp/core/my_notifiers.dart';
-import 'package:bookapp/models/book.dart';
+import 'package:bookapp/project/models/book.dart';
 import 'package:bookapp/project/string.dart';
 import 'package:bookapp/project/widgets/buttons/confirm_button.dart';
 import 'package:bookapp/project/widgets/inputs/book_text_form_field.dart';

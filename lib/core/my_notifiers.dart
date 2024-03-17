@@ -1,5 +1,6 @@
-import 'package:bookapp/models/notifiers/book_notifier.dart';
-import 'package:bookapp/models/notifiers/theme_notifier.dart';
+import 'package:bookapp/project/models/notifiers/book_notifier.dart';
+import 'package:bookapp/project/models/notifiers/nav_notifiers.dart';
+import 'package:bookapp/project/models/notifiers/theme_notifier.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyNotifiers extends ImpNotifiers {
@@ -13,9 +14,12 @@ class MyNotifiers extends ImpNotifiers {
   final theme = ChangeNotifierProvider<ThemeNotifier>((ref) => ThemeNotifier());
   @override
   final books = ChangeNotifierProvider<BookNotifier>((ref) => BookNotifier());
+  @override
+  final nav = ChangeNotifierProvider<NavNotifiers>((ref) => NavNotifiers());
 }
 
 abstract class ImpNotifiers {
   ProviderBase<ThemeNotifier> get theme;
   ProviderBase<BookNotifier> get books;
+  ProviderBase<NavNotifiers> get nav;
 }
