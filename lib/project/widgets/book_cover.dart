@@ -7,7 +7,7 @@ class BookCover extends ConsumerWidget {
   final BoxFit boxFit;
   final double? height;
 
-  BookCover({required this.url, this.boxFit = BoxFit.fitWidth, this.height});
+  const BookCover({super.key, required this.url, this.boxFit = BoxFit.fitWidth, this.height});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,7 +22,7 @@ class BookCover extends ConsumerWidget {
           BoxShadow(
             color: themeNotifier.darkModeEnabled ? Colors.black.withOpacity(0.40) : Colors.black.withOpacity(0.20),
             blurRadius: 20,
-            offset: Offset(0, 10),
+            offset: const Offset(0, 10),
           )
         ],
       ),

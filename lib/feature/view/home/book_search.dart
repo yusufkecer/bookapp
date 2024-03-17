@@ -16,7 +16,7 @@ class BookSearch extends SearchDelegate<Book> {
   List<Widget> buildActions(BuildContext context) {
     return [
       IconButton(
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
         color: Theme.of(context).iconTheme.color,
         onPressed: () => query = '',
       )
@@ -26,7 +26,7 @@ class BookSearch extends SearchDelegate<Book> {
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
       color: Theme.of(context).iconTheme.color,
       onPressed: () => Navigator.of(context).pop(),
     );

@@ -4,7 +4,7 @@ class ColorData {
   const ColorData._();
   static const Color kPrimaryColor = Color(0xFFFFFFFF);
 
-  static const Color kPrimaryLight = Color(0xFFA3E82);
+  static const Color kPrimaryLight = Color(0xFFA3E824);
 
   static const Color kAccentColor = Color(0xFF005DFF);
 

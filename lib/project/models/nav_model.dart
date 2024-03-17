@@ -5,13 +5,13 @@ class NavModel {
   final IconData? icons;
   final String? name;
 
-  NavModel({
+  const NavModel({
     this.id,
     this.icons,
     this.name,
   });
 
-  static List<NavModel> _navBtn = [
+  static const List<NavModel> _navBtn = [
     NavModel(id: 0, icons: Icons.home, name: 'Home'),
     NavModel(id: 1, icons: Icons.search, name: 'Search'),
     NavModel(id: 2, icons: Icons.favorite, name: 'Like'),

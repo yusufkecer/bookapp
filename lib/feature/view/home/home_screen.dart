@@ -19,7 +19,7 @@ class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends HomeModel {
@@ -29,14 +29,14 @@ class _HomeScreenState extends HomeModel {
     final themeNotifer = ref.read(MyNotifiers.instance.theme);
     bookNotifier.initBook();
     return Scaffold(
-      appBar: buildAppBar(context, themeNotifer, title: Text(StringData.library), ref: ref),
+      appBar: buildAppBar(context, themeNotifer, title: const Text(StringData.library), ref: ref),
       body: Stack(
         children: [
           Container(
             child: MediaQuery.of(context).size.width > Layout.wideLayoutThreshold
                 ? Row(
                     children: <Widget>[
-                      Flexible(
+                      const Flexible(
                         flex: 4,
                         child: BookList(),
                       ),
@@ -48,9 +48,9 @@ class _HomeScreenState extends HomeModel {
                       ),
                     ],
                   )
-                : BookList(),
+                : const BookList(),
           ),
-          Align(
+          const Align(
             alignment: Alignment.bottomCenter,
             child: BottomNavBar(),
           )

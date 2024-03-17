@@ -6,10 +6,11 @@ import 'package:bookapp/project/widgets/inputs/book_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+@immutable
 class BookAdd extends StatelessWidget {
   final Book? book;
 
-  BookAdd({this.book});
+  const BookAdd({super.key, this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +31,10 @@ class BookAdd extends StatelessWidget {
 class AddBookForm extends ConsumerStatefulWidget {
   final Book? book;
 
-  AddBookForm({this.book});
+  const AddBookForm({super.key, this.book});
 
   @override
-  _AddBookFormState createState() => _AddBookFormState();
+  ConsumerState<AddBookForm> createState() => _AddBookFormState();
 }
 
 class _AddBookFormState extends ConsumerState<AddBookForm> {
@@ -91,7 +92,7 @@ class _AddBookFormState extends ConsumerState<AddBookForm> {
           InputDecorator(
             decoration: InputDecoration(
               labelText: StringData.rating,
-              labelStyle: TextStyle(color: Colors.grey),
+              labelStyle: const TextStyle(color: Colors.grey),
               suffixIcon: Chip(
                 label: Text(_rating!.toStringAsFixed(1)),
               ),

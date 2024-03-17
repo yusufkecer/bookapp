@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class BottomNavBar extends ConsumerWidget {
-  const BottomNavBar({Key? key}) : super(key: key);
+  const BottomNavBar({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,7 +18,7 @@ class BottomNavBar extends ConsumerWidget {
 
   AnimatedContainer navigationBar(NavNotifiers data) {
     return AnimatedContainer(
-      height: 70.0,
+      height: 75.0,
       duration: const Duration(milliseconds: 400),
       decoration: BoxDecoration(
         color: ColorData.white,

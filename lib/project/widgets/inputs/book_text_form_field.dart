@@ -6,7 +6,8 @@ class BookTextFormField extends StatelessWidget {
   final Function(String? val) onSaved;
   final String? initialValue;
 
-  BookTextFormField({
+  const BookTextFormField({
+    super.key,
     required this.labelText,
     required this.errorText,
     required this.onSaved,
@@ -23,11 +24,11 @@ class BookTextFormField extends StatelessWidget {
           ),
       decoration: InputDecoration(
           labelText: labelText,
-          errorStyle: TextStyle(
+          errorStyle: const TextStyle(
             fontSize: 15.0,
             height: 0.9,
           ),
-          labelStyle: TextStyle(color: Colors.grey)),
+          labelStyle: const TextStyle(color: Colors.grey)),
       validator: (value) {
         if (value == null) {
           return errorText;

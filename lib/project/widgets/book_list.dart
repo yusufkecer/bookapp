@@ -7,14 +7,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class BookList extends ConsumerWidget {
   final List<Book>? _books;
 
-  BookList({books}) : _books = books;
+  const BookList({super.key, books}) : _books = books;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     List<Book> book = ref.watch(MyNotifiers.instance.books).books;
 
     return ListView.separated(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       separatorBuilder: ((context, index) {
         return Container(
           padding: const EdgeInsets.symmetric(horizontal: 22.0),

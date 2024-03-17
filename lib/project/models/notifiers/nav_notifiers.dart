@@ -6,11 +6,7 @@ class NavNotifiers extends ChangeNotifier {
   int get currentIndex => _currentIndex;
 
   void updateIndex(int index) {
-    print("updateIndex $index");
-    print("updateIndex $_currentIndex");
     _currentIndex = index;
-    print("after $index");
-    print("after $_currentIndex");
     notifyListeners();
   }
 }

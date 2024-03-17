@@ -8,19 +8,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() => runApp(
-      ProviderScope(
+      const ProviderScope(
         child: BookLibrary(),
       ),
     );
 
 class BookLibrary extends StatelessWidget {
+  const BookLibrary({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialAppWithTheme();
+    return const MaterialAppWithTheme();
   }
 }
 
 class MaterialAppWithTheme extends ConsumerWidget {
+  const MaterialAppWithTheme({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeNotifier = ref.watch(MyNotifiers.instance.theme);
@@ -31,7 +35,7 @@ class MaterialAppWithTheme extends ConsumerWidget {
       title: "Book Library",
       darkTheme: ThemeData.dark(),
       theme: themeNotifier.darkModeEnabled ? MyTheme.baseDark : MyTheme.baseLight,
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

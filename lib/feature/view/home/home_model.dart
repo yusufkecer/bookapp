@@ -14,13 +14,13 @@ abstract class HomeModel extends ConsumerState<HomeScreen> {
       centerTitle: true,
       title: title,
       leading: IconButton(
-        icon: themeNotifier.darkModeEnabled ? Icon(Icons.brightness_7) : Icon(Icons.brightness_2),
+        icon: themeNotifier.darkModeEnabled ? const Icon(Icons.brightness_7) : const Icon(Icons.brightness_2),
         color: Theme.of(context).iconTheme.color,
         onPressed: () => themeNotifier.toggleTheme(),
       ),
       actions: [
         IconButton(
-          icon: Icon(Icons.search),
+          icon: const Icon(Icons.search),
           onPressed: () {
             showSearch(context: context, delegate: BookSearch(ref: ref));
           },
@@ -30,8 +30,6 @@ abstract class HomeModel extends ConsumerState<HomeScreen> {
   }
 
   SizedBox iconBtn(int i, int selectBtn) {
-    print(selectBtn);
-    print(i);
     bool isActive = selectBtn == i ? true : false;
     var height = isActive ? 60.0 : 0.0;
     var width = isActive ? 50.0 : 0.0;

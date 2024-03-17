@@ -14,7 +14,7 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 class BookDetails extends ConsumerWidget {
   final Book? _book;
 
-  BookDetails(Book book) : _book = book;
+  const BookDetails(Book book, {super.key}) : _book = book;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -24,7 +24,7 @@ class BookDetails extends ConsumerWidget {
     return Scaffold(
       appBar: MediaQuery.of(context).size.width < Layout.wideLayoutThreshold ? _buildAppBar(context) : null,
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Container(
           padding: const EdgeInsets.all(20.0),
           margin: const EdgeInsets.symmetric(horizontal: 18.0),
@@ -120,11 +120,11 @@ class BookDetails extends ConsumerWidget {
                 _buildSubFab(StringData.editBook, Icons.edit,
                     () => Navigator.push(context, MaterialPageRoute(builder: (_) => BookAdd(book: _book)))),
                 _buildSubFab(StringData.add, Icons.add,
-                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => BookAdd())))
+                    () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BookAdd())))
               ],
             )
           : FloatingActionButton(
-              child: Icon(Icons.delete),
+              child: const Icon(Icons.delete),
               onPressed: () => _showDeleteDialog(context, bookNotifier),
             ),
     );
@@ -135,7 +135,7 @@ class BookDetails extends ConsumerWidget {
       title: Text(StringData.bookDetails),
       actions: <Widget>[
         IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.edit,
             size: 22.0,
           ),
@@ -163,14 +163,14 @@ class BookDetails extends ConsumerWidget {
   void _showDeleteDialog(BuildContext context, BookNotifier bookNotifier) async {
     final dialog = AlertDialog(
       backgroundColor: Theme.of(context).primaryColor,
-      title: Text('Delete book?'),
+      title: const Text('Delete book?'),
       content: Text(
         'This will delete the book from your book list',
         style: TextStyle(color: Theme.of(context).textTheme.caption?.color),
       ),
       actions: [
         ElevatedButton(
-          child: Text(
+          child: const Text(
             'CANCEL',
             // style: TextStyle(
             //   color: Theme.of(context).buttonColor,
@@ -179,7 +179,7 @@ class BookDetails extends ConsumerWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
         ElevatedButton(
-          child: Text(
+          child: const Text(
             'ACCEPT',
             // style: TextStyle(
             //   color: Theme.of(context).buttonColor,

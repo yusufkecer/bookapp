@@ -9,7 +9,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class BookItem extends ConsumerWidget {
   final Book? _book;
 
-  BookItem(this._book);
+  BookItem(this._book, {super.key});
   final book = ChangeNotifierProvider<BookNotifier>((ref) => BookNotifier());
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -58,7 +58,7 @@ class BookItem extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          '${_book.title}',
+                          _book.title,
                           style: Theme.of(context).textTheme.headlineLarge,
                         ),
                         Padding(
@@ -77,7 +77,7 @@ class BookItem extends ConsumerWidget {
                     //   rating: (_book.rating / 2).toDouble(),
                     // ),
                     Text(
-                      '${_book.category}',
+                      _book.category,
                       style: Theme.of(context).textTheme.headlineSmall,
                     ),
                   ],

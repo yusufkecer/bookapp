@@ -8,7 +8,8 @@ class ConfirmButton extends ConsumerWidget {
   final Function() onPressed;
   final double height;
 
-  ConfirmButton({
+  const ConfirmButton({
+    super.key,
     required this.text,
     required this.onPressed,
     this.height = 60.0,

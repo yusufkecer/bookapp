@@ -9,5 +9,5 @@ class MyTheme {
       Theme.of(NavigationKey.instance.navigatorKey.currentContext!).textTheme.displayMedium;
 
   static final TextStyle? verySmall =
-      Theme.of(NavigationKey.instance.navigatorKey.currentContext!).textTheme.labelMedium;
+      Theme.of(NavigationKey.instance.navigatorKey.currentContext!).textTheme.labelLarge;
 }
