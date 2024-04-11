@@ -1,9 +1,9 @@
 import 'package:bookapp/core/my_notifiers.dart';
 import 'package:bookapp/core/theme/colors.dart';
 import 'package:bookapp/core/theme/theme.dart';
-import 'package:bookapp/project/models/nav_model.dart';
-import 'package:bookapp/project/models/notifiers/nav_notifiers.dart';
-import 'package:bookapp/project/widgets/navigation_bat/nav_notch.dart';
+import 'package:bookapp/product/models/nav_model.dart';
+import 'package:bookapp/product/util/notifiers/nav_notifiers.dart';
+import 'package:bookapp/product/widgets/navigation_bat/nav_notch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

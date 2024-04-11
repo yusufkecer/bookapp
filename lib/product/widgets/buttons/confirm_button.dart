@@ -24,7 +24,7 @@ class ConfirmButton extends ConsumerWidget {
       height: height,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: themeStatus.darkModeEnabled
+          backgroundColor: themeStatus.darkModeEnabled ==true
               ? Theme.of(context).buttonTheme.colorScheme?.background
               : Theme.of(context).primaryColor,
         ),

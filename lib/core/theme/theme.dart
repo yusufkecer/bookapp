@@ -1,6 +1,6 @@
 import 'package:bookapp/core/global_key.dart';
 import 'package:flutter/material.dart';
-
+@immutable
 class MyTheme {
   static final ThemeData baseLight = ThemeData.light();
   static final ThemeData baseDark = ThemeData.dark();

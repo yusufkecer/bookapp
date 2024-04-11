@@ -1,12 +1,12 @@
 import 'package:bookapp/core/my_notifiers.dart';
 import 'package:bookapp/core/theme/colors.dart';
-import 'package:bookapp/project/models/book.dart';
-import 'package:bookapp/project/models/notifiers/book_notifier.dart';
+import 'package:bookapp/product/models/book.dart';
+import 'package:bookapp/product/util/notifiers/book_notifier.dart';
 import 'package:bookapp/feature/view/book/book_add.dart';
 import 'package:bookapp/core/style.dart';
-import 'package:bookapp/project/string.dart';
+import 'package:bookapp/product/string.dart';
 
-import 'package:bookapp/project/widgets/book_cover.dart';
+import 'package:bookapp/product/widgets/book_cover.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
@@ -83,11 +83,6 @@ class BookDetails extends ConsumerWidget {
                   ),
                 ),
               ),
-              //! FIXME: Uncomment when StarRating is implemented
-              // StarRating(
-              //   starCount: 5,
-              //   rating: (_book.rating / 2).toDouble(),
-              // ),
               Divider(
                 color: Colors.grey.withOpacity(0.5),
                 height: 38.0,
@@ -132,7 +127,7 @@ class BookDetails extends ConsumerWidget {
 
   AppBar _buildAppBar(BuildContext context) {
     return AppBar(
-      title: Text(StringData.bookDetails),
+      title: const Text(StringData.bookDetails),
       actions: <Widget>[
         IconButton(
           icon: const Icon(
@@ -154,7 +149,7 @@ class BookDetails extends ConsumerWidget {
   SpeedDialChild _buildSubFab(String label, IconData iconData, Function() onTap) {
     return SpeedDialChild(
       label: label,
-      labelStyle: TextStyle(color: ColorData.kTextTitleColor),
+      labelStyle: const TextStyle(color: ColorData.kTextTitleColor),
       child: Icon(iconData),
       onTap: onTap,
     );

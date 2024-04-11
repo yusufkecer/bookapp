@@ -1,6 +1,6 @@
-import 'package:bookapp/project/models/notifiers/book_notifier.dart';
-import 'package:bookapp/project/models/notifiers/nav_notifiers.dart';
-import 'package:bookapp/project/models/notifiers/theme_notifier.dart';
+import 'package:bookapp/product/util/notifiers/book_notifier.dart';
+import 'package:bookapp/product/util/notifiers/nav_notifiers.dart';
+import 'package:bookapp/product/util/notifiers/theme_notifier.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyNotifiers extends ImpNotifiers {

@@ -1,8 +1,8 @@
-import 'package:bookapp/project/models/book.dart';
-import 'package:bookapp/project/models/notifiers/book_notifier.dart';
+import 'package:bookapp/product/models/book.dart';
+import 'package:bookapp/product/util/notifiers/book_notifier.dart';
 import 'package:bookapp/feature/view/book/book_details.dart';
 import 'package:bookapp/core/style.dart';
-import 'package:bookapp/project/widgets/book_cover.dart';
+import 'package:bookapp/product/widgets/book_cover.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

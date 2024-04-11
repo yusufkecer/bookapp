@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1072051805904",
+    "project_id": "school-library-a064b",
+    "storage_bucket": "school-library-a064b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072051805904:android:4d764fb4e33af5797308d5",
+        "android_client_info": {
+          "package_name": "com.bookapp.bookapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeyqPoivAS-KspznLOP3dchGk-ES1i3Y8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,10 +1,6 @@
-import 'package:bookapp/project/models/book.dart';
+import 'package:bookapp/product/models/book.dart';
 import 'package:flutter/widgets.dart';
 
-/// Class used to manage the state in the app
-/// Contains all the books that are available
-/// and provides methods to manage the state such as
-/// addBook, removeBook
 class BookNotifier extends ChangeNotifier {
   List<Book>? _books;
   List<Book> get books => _books ?? [];
@@ -45,7 +41,6 @@ class BookNotifier extends ChangeNotifier {
     oldBook.category = newBook.category;
     oldBook.coverUrl = newBook.coverUrl;
     oldBook.description = newBook.description;
-    oldBook.rating = newBook.rating;
     oldBook.title = newBook.title;
 
     final index = books.indexOf(oldBook);

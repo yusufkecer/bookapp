@@ -2,9 +2,9 @@ import 'package:bookapp/core/theme/colors.dart';
 import 'package:bookapp/core/theme/theme.dart';
 import 'package:bookapp/feature/view/home/book_search.dart';
 import 'package:bookapp/feature/view/home/home_screen.dart';
-import 'package:bookapp/project/models/nav_model.dart';
-import 'package:bookapp/project/models/notifiers/theme_notifier.dart';
-import 'package:bookapp/project/widgets/navigation_bat/nav_notch.dart';
+import 'package:bookapp/product/models/nav_model.dart';
+import 'package:bookapp/product/util/notifiers/theme_notifier.dart';
+import 'package:bookapp/product/widgets/navigation_bat/nav_notch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

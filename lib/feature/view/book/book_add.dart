@@ -1,8 +1,8 @@
 import 'package:bookapp/core/my_notifiers.dart';
-import 'package:bookapp/project/models/book.dart';
-import 'package:bookapp/project/string.dart';
-import 'package:bookapp/project/widgets/buttons/confirm_button.dart';
-import 'package:bookapp/project/widgets/inputs/book_text_form_field.dart';
+import 'package:bookapp/product/models/book.dart';
+import 'package:bookapp/product/string.dart';
+import 'package:bookapp/product/widgets/buttons/confirm_button.dart';
+import 'package:bookapp/product/widgets/inputs/book_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -49,7 +49,6 @@ class _AddBookFormState extends ConsumerState<AddBookForm> {
   @override
   void initState() {
     super.initState();
-    _rating = double.tryParse((widget.book?.rating).toString()) ?? 0.0;
   }
 
   @override
@@ -115,7 +114,7 @@ class _AddBookFormState extends ConsumerState<AddBookForm> {
                 }
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  final book = Book(_title, _author, _description, _coverUrl, _category, _rating as num);
+                  final book = Book(_title, _author, _description, _coverUrl, _category);
 
                   if (widget.book == null) {
                     ref.watch(MyNotifiers.instance.books).removeBook(book);

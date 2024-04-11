@@ -5,12 +5,12 @@ import 'package:bookapp/core/theme/colors.dart';
 import 'package:bookapp/feature/view/home/home_model.dart';
 
 import 'package:bookapp/feature/view/book/book_details.dart';
-import 'package:bookapp/project/models/nav_model.dart';
-import 'package:bookapp/project/models/notifiers/nav_notifiers.dart';
+import 'package:bookapp/product/models/nav_model.dart';
+import 'package:bookapp/product/util/notifiers/nav_notifiers.dart';
 
-import 'package:bookapp/project/string.dart';
-import 'package:bookapp/project/widgets/book_list.dart';
-import 'package:bookapp/project/widgets/navigation_bat/navigation_bar.dart';
+import 'package:bookapp/product/string.dart';
+import 'package:bookapp/product/widgets/book_list.dart';
+import 'package:bookapp/product/widgets/navigation_bat/navigation_bar.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
