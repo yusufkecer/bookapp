@@ -1,5 +1,5 @@
+import 'package:bookapp/core/my_notifiers.dart';
 import 'package:bookapp/product/models/book.dart';
-import 'package:bookapp/product/util/notifiers/book_notifier.dart';
 import 'package:bookapp/feature/view/book/book_details.dart';
 import 'package:bookapp/core/style.dart';
 import 'package:bookapp/product/widgets/book_cover.dart';
@@ -10,7 +10,7 @@ class BookItem extends ConsumerWidget {
   final Book? _book;
 
   BookItem(this._book, {super.key});
-  final book = ChangeNotifierProvider<BookNotifier>((ref) => BookNotifier());
+  final book = MyNotifiers.instance.books;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final bookNotifier = ref.read(book);

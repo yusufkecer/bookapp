@@ -9,6 +9,7 @@ class AppInit {
 
   Future<void> firebaseInit() async {
     await Firebase.initializeApp(
+      // name: 'BookApp',
       options: DefaultFirebaseOptions.currentPlatform,
     );
   }

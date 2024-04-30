@@ -1,7 +1,14 @@
 import 'package:bookapp/product/models/book.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
 
 class BookNotifier extends ChangeNotifier {
+  static final BookNotifier _instance = BookNotifier._internal();
+  factory BookNotifier() => _instance;
+  BookNotifier._internal();
+
+  CollectionReference booksCollection = FirebaseFirestore.instance.collection('books');
+
   List<Book>? _books;
   List<Book> get books => _books ?? [];
   set books(List<Book> books) {
@@ -18,6 +25,16 @@ class BookNotifier extends ChangeNotifier {
 
   void initBook() {
     _books = initialBooks;
+    // booksCollection
+    //     .withConverter<Book>(
+    //       fromFirestore: (snapshot, _) => Book.fromMap(snapshot.data()!),
+    //       toFirestore: (book, _) => book.toMap(),
+    //     )
+    //     .get()
+    //     .then((value) {
+    //   books = value.docs.map((e) => e.data()).toList();
+    // });
+    notifyListeners();
   }
 
   Book addBook(Book book) {
@@ -25,6 +42,7 @@ class BookNotifier extends ChangeNotifier {
       return book;
     }
     books = (_books!..add(book));
+    booksCollection.add(book.toMap());
     return book;
   }
 
@@ -33,6 +51,7 @@ class BookNotifier extends ChangeNotifier {
       return book;
     }
     books = (_books!..remove(book));
+    booksCollection.doc(book.id).delete();
     return book;
   }
 

@@ -18,14 +18,17 @@ class BottomNavBar extends ConsumerWidget {
 
   AnimatedContainer navigationBar(NavNotifiers data) {
     return AnimatedContainer(
-      height: 75.0,
+      height: NavModel.navBarHeight,
       duration: const Duration(milliseconds: 400),
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: ColorData.black.withOpacity(0.1),
+            spreadRadius: 1,
+            blurRadius: 10,
+          ),
+        ],
         color: ColorData.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(data.currentIndex == 0 ? 0.0 : 20.0),
-          topRight: Radius.circular(data.currentIndex == NavModel.navBtn.length - 1 ? 0.0 : 20.0),
-        ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -45,7 +48,7 @@ class BottomNavBar extends ConsumerWidget {
     var height = isActive ? 60.0 : 0.0;
     var width = isActive ? 50.0 : 0.0;
     return SizedBox(
-      width: 75.0,
+      width: NavModel.navBarHeight,
       child: Stack(
         children: [
           Align(
@@ -66,14 +69,14 @@ class BottomNavBar extends ConsumerWidget {
             child: Icon(
               NavModel.navBtn[i].icons!,
               size: 35,
-              color: isActive ? ColorData.selectColor : ColorData.black,
+              color: ColorData.black,
             ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Text(
               NavModel.navBtn[i].name!,
-              style: isActive ? MyTheme.verySmall?.copyWith(color: ColorData.selectColor) : MyTheme.verySmall,
+              style: isActive ? MyTheme.verySmall?.copyWith(color: ColorData.black) : MyTheme.verySmall,
             ),
           )
         ],

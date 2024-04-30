@@ -7,7 +7,7 @@ class ButtonNotch extends CustomPainter {
     var dotPoint = Offset(size.width / 2, 2);
 
     var paint_1 = Paint()
-      ..color = ColorData.bgColor
+      ..color = ColorData.black
       ..style = PaintingStyle.fill;
     var paint_2 = Paint()
       ..color = ColorData.white

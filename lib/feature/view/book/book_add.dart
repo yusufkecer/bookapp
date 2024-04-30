@@ -1,6 +1,6 @@
 import 'package:bookapp/core/my_notifiers.dart';
 import 'package:bookapp/product/models/book.dart';
-import 'package:bookapp/product/string.dart';
+import 'package:bookapp/product/string_data/string.dart';
 import 'package:bookapp/product/widgets/buttons/confirm_button.dart';
 import 'package:bookapp/product/widgets/inputs/book_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +42,6 @@ class _AddBookFormState extends ConsumerState<AddBookForm> {
   String _title = '';
   String _author = '';
   String _description = '';
-  double? _rating;
   String _coverUrl = '';
   String _category = '';
 
@@ -88,22 +87,6 @@ class _AddBookFormState extends ConsumerState<AddBookForm> {
             initialValue: widget.book?.category,
             onSaved: (value) => _category = value!,
           ),
-          InputDecorator(
-            decoration: InputDecoration(
-              labelText: StringData.rating,
-              labelStyle: const TextStyle(color: Colors.grey),
-              suffixIcon: Chip(
-                label: Text(_rating!.toStringAsFixed(1)),
-              ),
-            ),
-            child: Slider(
-              value: _rating!.roundToDouble(),
-              min: 0.0,
-              max: 10.0,
-              divisions: 10,
-              onChanged: (value) => setState(() => _rating = value),
-            ),
-          ),
           Padding(
             padding: const EdgeInsets.only(top: 22.0),
             child: ConfirmButton(
@@ -114,7 +97,8 @@ class _AddBookFormState extends ConsumerState<AddBookForm> {
                 }
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  final book = Book(_title, _author, _description, _coverUrl, _category);
+                  final book = Book(_title, _author, _description, _coverUrl, _category,
+                      widget.book?.id ?? DateTime.now().toString());
 
                   if (widget.book == null) {
                     ref.watch(MyNotifiers.instance.books).removeBook(book);

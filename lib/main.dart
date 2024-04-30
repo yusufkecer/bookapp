@@ -10,7 +10,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  AppInit.instance.firebaseInit();
+  await AppInit.instance.firebaseInit();
   runApp(
     const ProviderScope(
       child: MyApp(),

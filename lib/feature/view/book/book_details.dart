@@ -4,7 +4,7 @@ import 'package:bookapp/product/models/book.dart';
 import 'package:bookapp/product/util/notifiers/book_notifier.dart';
 import 'package:bookapp/feature/view/book/book_add.dart';
 import 'package:bookapp/core/style.dart';
-import 'package:bookapp/product/string.dart';
+import 'package:bookapp/product/string_data/string.dart';
 
 import 'package:bookapp/product/widgets/book_cover.dart';
 import 'package:flutter/material.dart';

@@ -31,5 +31,5 @@ class StringData {
   static const String enterCategory = 'Kategori Girin';
   static const String rating = 'Puan';
   //library
-  static const String library = 'Kütüphane';
+  static const String library = 'Kitaplar';
 }

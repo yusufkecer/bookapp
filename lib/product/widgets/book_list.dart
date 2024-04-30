@@ -1,7 +1,9 @@
 import 'package:bookapp/core/my_notifiers.dart';
 import 'package:bookapp/product/models/book.dart';
+import 'package:bookapp/product/models/nav_model.dart';
 import 'package:bookapp/product/widgets/book_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class BookList extends ConsumerWidget {
@@ -13,21 +15,30 @@ class BookList extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     List<Book> book = ref.watch(MyNotifiers.instance.books).books;
 
-    return ListView.separated(
-      physics: const BouncingScrollPhysics(),
-      separatorBuilder: ((context, index) {
-        return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 22.0),
-          child: Divider(
-            color: Colors.grey.withOpacity(0.3),
-            height: 18.0,
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.separated(
+            physics: const BouncingScrollPhysics(),
+            separatorBuilder: ((context, index) {
+              return Container(
+                padding: const EdgeInsets.symmetric(horizontal: 22.0),
+                child: Divider(
+                  color: Colors.grey.withOpacity(0.3),
+                  height: 18.0,
+                ),
+              );
+            }),
+            itemCount: book.length,
+            itemBuilder: ((context, index) {
+              return BookItem(_books?.elementAt(index) ?? book[index]);
+            }),
           ),
-        );
-      }),
-      itemCount: book.length,
-      itemBuilder: ((context, index) {
-        return BookItem(_books?.elementAt(index) ?? book[index]);
-      }),
+        ),
+        const SizedBox(
+          height: NavModel.navBarHeight,
+        ),
+      ],
     );
   }
 }
