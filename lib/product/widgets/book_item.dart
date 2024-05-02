@@ -33,7 +33,7 @@ class BookItem extends ConsumerWidget {
             Flexible(
               fit: FlexFit.tight,
               flex: 4,
-              child: BookCover(url: _book!.coverUrl),
+              child: BookCover(url: _book!.coverUrl!),
             ),
             Flexible(
               flex: 6,
@@ -58,7 +58,7 @@ class BookItem extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          _book.title,
+                          _book.title!,
                           style: Theme.of(context).textTheme.headlineLarge,
                         ),
                         Padding(
@@ -77,7 +77,7 @@ class BookItem extends ConsumerWidget {
                     //   rating: (_book.rating / 2).toDouble(),
                     // ),
                     Text(
-                      _book.category,
+                      _book.category!,
                       style: Theme.of(context).textTheme.headlineSmall,
                     ),
                   ],

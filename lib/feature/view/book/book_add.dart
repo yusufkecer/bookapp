@@ -97,8 +97,13 @@ class _AddBookFormState extends ConsumerState<AddBookForm> {
                 }
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  final book = Book(_title, _author, _description, _coverUrl, _category,
-                      widget.book?.id ?? DateTime.now().toString());
+                  final book = Book(
+                      title: _title,
+                      author: _author,
+                      description: _description,
+                      coverUrl: _coverUrl,
+                      category: _category,
+                      id: widget.book?.id ?? DateTime.now().toString());
 
                   if (widget.book == null) {
                     ref.watch(MyNotifiers.instance.books).removeBook(book);

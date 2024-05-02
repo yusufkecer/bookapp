@@ -7,7 +7,7 @@ class BookNotifier extends ChangeNotifier {
   factory BookNotifier() => _instance;
   BookNotifier._internal();
 
-  CollectionReference booksCollection = FirebaseFirestore.instance.collection('books');
+  CollectionReference booksCollection = FirebaseFirestore.instance.collection('book');
 
   List<Book>? _books;
   List<Book> get books => _books ?? [];
@@ -24,16 +24,10 @@ class BookNotifier extends ChangeNotifier {
   }
 
   void initBook() {
-    _books = initialBooks;
-    // booksCollection
-    //     .withConverter<Book>(
-    //       fromFirestore: (snapshot, _) => Book.fromMap(snapshot.data()!),
-    //       toFirestore: (book, _) => book.toMap(),
-    //     )
-    //     .get()
-    //     .then((value) {
-    //   books = value.docs.map((e) => e.data()).toList();
-    // });
+    booksCollection.get().then((value) {
+      _books = value.docs.map((e) => Book().fromMap(e.data() as Map<String, dynamic>)).toList();
+      notifyListeners();
+    });
     notifyListeners();
   }
 

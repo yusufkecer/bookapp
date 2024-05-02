@@ -6,6 +6,7 @@ class NavNotifiers extends ChangeNotifier {
   int get currentIndex => _currentIndex;
 
   void updateIndex(int index) {
+    notifyListeners();
     _currentIndex = index;
     notifyListeners();
   }

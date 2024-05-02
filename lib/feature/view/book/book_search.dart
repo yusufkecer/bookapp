@@ -37,7 +37,7 @@ class BookSearch extends SearchDelegate<Book> {
     final books = ref.watch(MyNotifiers.instance.books).books;
 
     final results = books
-        .where((book) => book.title.toLowerCase().contains(query) || book.author.toLowerCase().contains(query))
+        .where((book) => book.title!.toLowerCase().contains(query) || book.author!.toLowerCase().contains(query))
         .toList();
 
     return BookList(books: results);
@@ -48,7 +48,7 @@ class BookSearch extends SearchDelegate<Book> {
     final books = ref.watch(MyNotifiers.instance.books).books;
 
     final results = books
-        .where((book) => book.title.toLowerCase().contains(query) || book.author.toLowerCase().contains(query))
+        .where((book) => book.title!.toLowerCase().contains(query) || book.author!.toLowerCase().contains(query))
         .toList();
 
     return BookList(books: results);

@@ -1,7 +1,7 @@
 import 'package:bookapp/core/global_key.dart';
 import 'package:bookapp/core/my_notifiers.dart';
 import 'package:bookapp/core/theme/theme.dart';
-import 'package:bookapp/feature/view/home/home_screen.dart';
+import 'package:bookapp/feature/view/home/home.dart';
 import 'package:bookapp/product/init/firestore_init.dart';
 
 import 'package:flutter/material.dart';
@@ -40,7 +40,7 @@ class MaterialAppWithTheme extends ConsumerWidget {
       title: "Book Library",
       darkTheme: ThemeData.dark(),
       theme: themeNotifier.darkModeEnabled ? MyTheme.baseDark : MyTheme.baseLight,
-      home: const HomeScreen(),
+      home: const Home(),
     );
   }
 }
