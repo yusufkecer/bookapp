@@ -1,7 +1,7 @@
 import 'package:bookapp/core/my_notifiers.dart';
 import 'package:bookapp/core/theme/layout.dart';
 
-import 'package:bookapp/feature/view/book/book_list_model.dart';
+import 'package:bookapp/feature/view/book/book_home_screen_model.dart';
 
 import 'package:bookapp/feature/view/book/book_details.dart';
 
@@ -13,11 +13,11 @@ import 'package:bookapp/product/widgets/book_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BookListView extends ConsumerStatefulWidget {
-  const BookListView({super.key});
+class HomeScreenView extends ConsumerStatefulWidget {
+  const HomeScreenView({super.key});
 
   @override
-  ConsumerState<BookListView> createState() => _HomeScreenState();
+  ConsumerState<HomeScreenView> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends HomeModel {

@@ -30,7 +30,7 @@ class BookCover extends ConsumerWidget {
         borderRadius: BorderRadius.circular(8.0),
         child: FadeInImage.assetNetwork(
           placeholder: assetPath,
-          image: url,
+          image: url.isEmpty ? assetPath : url,
           fit: boxFit,
           alignment: Alignment.topCenter,
           fadeInDuration: const Duration(milliseconds: 350),

@@ -22,7 +22,7 @@ class Book extends Equatable with FirebaseModel<Book> implements IdModel {
       'id': id,
       'author': author,
       'description': description,
-      'image': coverUrl,
+      'coverUrl': coverUrl,
       'category': category,
     };
   }
@@ -30,7 +30,6 @@ class Book extends Equatable with FirebaseModel<Book> implements IdModel {
   @override
   List<Object> get props {
     return [
-      id as Object,
       title as Object,
       author as Object,
       description as Object,

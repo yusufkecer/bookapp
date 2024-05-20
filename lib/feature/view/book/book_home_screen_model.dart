@@ -1,12 +1,12 @@
 import 'package:bookapp/feature/view/book/book_search.dart';
-import 'package:bookapp/feature/view/book/book_list.dart';
+import 'package:bookapp/feature/view/book/book_home_screen_view.dart';
 
 import 'package:bookapp/product/util/notifiers/theme_notifier.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-abstract class HomeModel extends ConsumerState<BookListView> {
+abstract class HomeModel extends ConsumerState<HomeScreenView> {
   AppBar buildAppBar(BuildContext context, ThemeNotifier themeNotifier, {Widget? title, required WidgetRef ref}) {
     return AppBar(
       centerTitle: true,

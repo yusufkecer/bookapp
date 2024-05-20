@@ -106,7 +106,8 @@ class _AddBookFormState extends ConsumerState<AddBookForm> {
                       id: widget.book?.id ?? DateTime.now().toString());
 
                   if (widget.book == null) {
-                    ref.watch(MyNotifiers.instance.books).removeBook(book);
+                    print("book $book");
+                    ref.watch(MyNotifiers.instance.books).addBook(book);
                     Navigator.pop(context);
                   } else {
                     ref.watch(MyNotifiers.instance.books).updateBook(widget.book!, book);

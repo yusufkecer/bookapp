@@ -23,8 +23,8 @@ class StudentNotifier with ChangeNotifier {
     if (data.id.isEmpty) {
       return false;
     }
-    // student.id = data.id;
-    //  addStudent(student);
+    student.id = data.id;
+    addStudent(student);
     return true;
   }
 
@@ -36,7 +36,7 @@ class StudentNotifier with ChangeNotifier {
         _isLoading = false;
         return null;
       }
-      _students = value.docs.map((e) => const Student().fromMap(e.data() as Map<String, dynamic>)).toList();
+      _students = value.docs.map((e) => Student().fromMap(e.data() as Map<String, dynamic>)).toList();
       _isLoading = false;
       notifyListeners();
     });

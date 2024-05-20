@@ -3,7 +3,6 @@ import 'package:bookapp/product/models/book.dart';
 import 'package:bookapp/product/models/nav_model.dart';
 import 'package:bookapp/product/widgets/book_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class BookList extends ConsumerWidget {

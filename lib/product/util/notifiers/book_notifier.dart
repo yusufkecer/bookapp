@@ -1,4 +1,5 @@
 import 'package:bookapp/product/models/book.dart';
+import 'package:bookapp/product/models/book_history.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
 
@@ -10,7 +11,9 @@ class BookNotifier extends ChangeNotifier {
   CollectionReference booksCollection = FirebaseFirestore.instance.collection('book');
 
   List<Book>? _books;
+  List<Book>? receicedBook;
   List<Book> get books => _books ?? [];
+  List<Book> get receicedBooks => receicedBook ?? [];
   set books(List<Book> books) {
     _books = books;
     notifyListeners();
@@ -23,12 +26,28 @@ class BookNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  void initBook() {
+  Future<void> initBook() async {
     booksCollection.get().then((value) {
       _books = value.docs.map((e) => Book().fromMap(e.data() as Map<String, dynamic>)).toList();
       notifyListeners();
     });
     notifyListeners();
+  }
+
+  Future getBooksById(List<String> id) async {
+    if (_books == null) {
+      await initBook();
+    }
+    receicedBook = _books!.where((element) => id.contains(element.id)).toList();
+    notifyListeners();
+  }
+
+  //TODO: fix tihs
+  List<BookHistory>? getReceicedBooksByUserId(String userId) {
+    if (_books == null) {
+      initBook();
+    }
+    return null;
   }
 
   Book addBook(Book book) {

@@ -27,13 +27,13 @@ class BookItem extends ConsumerWidget {
       child: Container(
         padding: const EdgeInsets.all(8.0),
         margin: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 25.0),
-        height: 260.0,
+        height: 160.0,
         child: Row(
           children: [
             Flexible(
               fit: FlexFit.tight,
               flex: 4,
-              child: BookCover(url: _book!.coverUrl!),
+              child: BookCover(url: _book!.coverUrl ?? ''),
             ),
             Flexible(
               flex: 6,
@@ -59,26 +59,23 @@ class BookItem extends ConsumerWidget {
                       children: <Widget>[
                         Text(
                           _book.title!,
-                          style: Theme.of(context).textTheme.headlineLarge,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.headlineMedium,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 10.0),
                           child: Text(
+                            overflow: TextOverflow.ellipsis,
                             'By ${_book.author}',
-                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                  color: Theme.of(context).colorScheme.secondary,
-                                ),
+                            style: Theme.of(context).textTheme.headlineSmall,
                           ),
                         ),
                       ],
                     ),
-                    // StarRating(
-                    //   starCount: 5,
-                    //   rating: (_book.rating / 2).toDouble(),
-                    // ),
                     Text(
                       _book.category!,
-                      style: Theme.of(context).textTheme.headlineSmall,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.bodyLarge,
                     ),
                   ],
                 ),

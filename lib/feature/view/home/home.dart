@@ -1,7 +1,7 @@
 import 'package:bookapp/core/my_notifiers.dart';
 import 'package:bookapp/core/theme/colors.dart';
 import 'package:bookapp/feature/view/book/book_add.dart';
-import 'package:bookapp/feature/view/book/book_list.dart';
+import 'package:bookapp/feature/view/book/book_home_screen_view.dart';
 import 'package:bookapp/feature/view/student/student_add/student_add.dart';
 import 'package:bookapp/feature/view/student/student_list/student_list.dart';
 import 'package:bookapp/product/string_data/string.dart';
@@ -27,7 +27,7 @@ class _HomeState extends ConsumerState<Home> {
     return Scaffold(
         body: Stack(
           children: [
-            nav.currentIndex == 0 ? const BookListView() : const StudentList(),
+            nav.currentIndex == 0 ? const HomeScreenView() : const StudentList(),
             const Align(
               alignment: Alignment.bottomCenter,
               child: BottomNavBar(),

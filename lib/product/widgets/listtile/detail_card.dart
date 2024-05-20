@@ -24,10 +24,42 @@ class DetailCard extends StatelessWidget {
       Row(
         children: [
           listTile("Alma Tarihi", "01.01.2010", Icons.calendar_today),
-          listTile("Teslim Tarihi", "01.01.2010", Icons.today),
         ],
       ),
     ]);
+  }
+
+  Widget oldBookList() {
+    if (student?.receivedBooks == null || student!.receivedBooks!.isEmpty) {
+      return const SizedBox.shrink();
+    }
+    return ListView.builder(
+      itemCount: student?.receivedBooks!.length,
+      itemBuilder: (context, index) {
+        return Column(
+          children: [
+            Row(
+              children: [
+                listTile("Kitap Adı", "Ali Veli", Icons.person),
+                listTile("Yazar", "5", Icons.school),
+              ],
+            ),
+            Row(
+              children: [
+                listTile("Sayfa", "123456", Icons.confirmation_number),
+                listTile("Açıklama", "Son Gece", Icons.book),
+              ],
+            ),
+            Row(
+              children: [
+                listTile("Alma Tarihi", "01.01.2010", Icons.calendar_month),
+                listTile("Teslim Tarihi", "01.01.2010", Icons.calendar_today),
+              ],
+            ),
+          ],
+        );
+      },
+    );
   }
 
   Expanded listTile(String title, String subtitle, IconData icon) {
