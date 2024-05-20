@@ -55,7 +55,7 @@ class _AddBookFormState extends ConsumerState<AddBookForm> {
     return Form(
       key: _formKey,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           BookTextFormField(
             labelText: StringData.title,

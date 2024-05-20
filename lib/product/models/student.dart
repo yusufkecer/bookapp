@@ -5,13 +5,7 @@ import 'package:flutter/foundation.dart';
 
 @immutable
 class Student extends Equatable with FirebaseModel<Student> implements IdModel {
-  const Student(
-      {required this.name,
-      required this.surname,
-      required this.stundentClass,
-      required this.studentNumber,
-      required this.id,
-      required this.receivedBooks});
+  const Student({this.name, this.surname, this.stundentClass, this.studentNumber, this.id, this.receivedBooks});
 
   @override
   List<Object?> get props => [name, surname, stundentClass, studentNumber, id, receivedBooks];
@@ -20,6 +14,7 @@ class Student extends Equatable with FirebaseModel<Student> implements IdModel {
   final String? surname;
   final String? stundentClass;
   final String? studentNumber;
+  @override
   final String? id;
   final List<Book>? receivedBooks;
 
@@ -30,7 +25,7 @@ class Student extends Equatable with FirebaseModel<Student> implements IdModel {
       'class': stundentClass,
       'studentNumber': studentNumber,
       'id': id,
-      'receivedBooks': receivedBooks?.map((x) => x.toMap()).toList(),
+      'receivedBooks': [],
     };
   }
 
@@ -60,7 +55,7 @@ class Student extends Equatable with FirebaseModel<Student> implements IdModel {
       stundentClass: json['class'],
       studentNumber: json['studentNumber'],
       id: json['id'],
-      receivedBooks: [],
+      receivedBooks: const [],
     );
   }
 }

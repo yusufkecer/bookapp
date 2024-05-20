@@ -11,9 +11,9 @@ class ProjectPadding extends EdgeInsets {
   }) : super.fromLTRB(left, top, right, bottom);
 
   const ProjectPadding.symmetric({
-    double vertical = 0.0,
-    double horizontal = 0.0,
-  }) : super.symmetric(vertical: vertical, horizontal: horizontal);
+    super.vertical,
+    super.horizontal,
+  }) : super.symmetric();
   //top twenty
   const ProjectPadding.topTwenty() : super.only(top: 20.0);
 }

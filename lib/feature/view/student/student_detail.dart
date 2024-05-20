@@ -1,10 +1,10 @@
 import 'package:bookapp/product/models/student.dart';
-import 'package:bookapp/product/widgets/detail_card.dart';
+import 'package:bookapp/product/widgets/listtile/detail_card.dart';
 import 'package:flutter/material.dart';
 
 class StudentDetail extends StatelessWidget {
-  final Student stundent;
-  const StudentDetail({super.key, required this.stundent});
+  final Student student;
+  const StudentDetail({super.key, required this.student});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class StudentDetail extends StatelessWidget {
         title: const Text("Öğrenci Detayı"),
         backgroundColor: Theme.of(context).cardTheme.color,
       ),
-      body: const DetailCard(/*students*/),
+      body: DetailCard(student: student),
     );
   }
 }

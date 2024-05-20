@@ -32,4 +32,35 @@ class StringData {
   static const String rating = 'Puan';
   //library
   static const String library = 'Kitaplar';
+  //student
+  static const String studentInfo = 'Öğrenci Bilgileri';
+  //list
+  static const String studentList = 'Öğrenci Listesi';
+  static const String studentAdd = 'Öğrenci Ekle';
+  static const String studentName = 'Ad';
+  static const String studentSurname = 'Soyad';
+  static const String studentClass = 'Sınıf';
+  static const String studentNumber = 'Numara';
+  //student hint
+  static const String studentNameHint = 'Ad Giriniz';
+  static const String studentSurnameHint = 'Soyad Giriniz';
+  static const String studentClassHint = 'Sınıf Giriniz';
+  static const String studentNumberHint = 'Numara Giriniz';
+//ok
+  static const String ok = 'Tamam';
+
+  //confirm and accept
+  static const String yes = 'Evet';
+  static const String no = 'Hayır';
+  static const String confirm = 'Emin Misiniz?';
+  static const String error = 'Hata';
+  static const String generalError = 'Bir hata oluştu.';
+  static const String success = 'Başarılı';
+  static const String generalSuccess = 'İşlem başarılı.';
+  //Save succ
+  static const String saveSuccess = 'Başarıyla kaydedildi.';
+  //error save
+  static const String saveError = 'Kayıt sırasında bir hata oluştu.';
+  //confirm save student
+  static const String saveStudent = 'Öğrenciyi kaydetmek istediğinize emin misiniz?';
 }

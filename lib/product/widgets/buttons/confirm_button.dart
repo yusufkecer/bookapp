@@ -7,24 +7,19 @@ class ConfirmButton extends ConsumerWidget {
   final String text;
   final Function() onPressed;
   final double height;
-
-  const ConfirmButton({
-    super.key,
-    required this.text,
-    required this.onPressed,
-    this.height = 60.0,
-  });
+  final double width;
+  const ConfirmButton({super.key, required this.text, required this.onPressed, this.height = 50.0, this.width = 200});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final ProviderBase theme = MyNotifiers.instance.theme;
     final themeStatus = ref.watch(theme);
     return SizedBox(
-      width: double.infinity,
+      width: width,
       height: height,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: themeStatus.darkModeEnabled ==true
+          backgroundColor: themeStatus.darkModeEnabled == true
               ? Theme.of(context).buttonTheme.colorScheme?.background
               : Theme.of(context).primaryColor,
         ),

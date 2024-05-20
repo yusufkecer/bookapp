@@ -1,7 +1,7 @@
 import 'package:bookapp/core/my_notifiers.dart';
 import 'package:bookapp/product/models/book.dart';
 import 'package:bookapp/feature/view/book/book_details.dart';
-import 'package:bookapp/core/style.dart';
+import 'package:bookapp/core/theme/layout.dart';
 import 'package:bookapp/product/widgets/book_cover.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

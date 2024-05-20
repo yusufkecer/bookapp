@@ -1,5 +1,5 @@
 import 'package:bookapp/core/my_notifiers.dart';
-import 'package:bookapp/core/style.dart';
+import 'package:bookapp/core/theme/layout.dart';
 
 import 'package:bookapp/feature/view/book/book_list_model.dart';
 

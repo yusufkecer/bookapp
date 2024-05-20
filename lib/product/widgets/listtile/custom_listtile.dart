@@ -1,7 +1,7 @@
 import 'package:bookapp/core/theme/theme.dart';
 import 'package:flutter/material.dart';
 
-import 'package:bookapp/product/project_radius.dart';
+import 'package:bookapp/core/radius/project_radius.dart';
 
 class PressableListtile extends StatelessWidget {
   final String title;

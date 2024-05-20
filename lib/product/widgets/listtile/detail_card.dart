@@ -4,17 +4,21 @@ import 'package:flutter/material.dart';
 
 class DetailCard extends StatelessWidget {
   final Student? student;
-  const DetailCard({super.key, this.student});
+  const DetailCard({super.key, required this.student});
 
   @override
   Widget build(BuildContext context) {
+    if (student == null) {
+      //TODO: Show error message
+      return const SizedBox();
+    }
     return Column(children: [
       Row(children: [
-        listTile("Adı Soyadı", "Sıla Bulut", Icons.person),
-        listTile("Sınıfı", "5-D", Icons.school),
+        listTile("Adı Soyadı", "${student!.name!} ${student!.surname!}", Icons.person),
+        listTile("Sınıfı", student!.stundentClass!, Icons.school),
       ]),
       Row(children: [
-        listTile("Numarası", "511", Icons.confirmation_number),
+        listTile("Numarası", student!.studentNumber!, Icons.confirmation_number),
         listTile("Okuduğu Kitap", "Son Gece", Icons.book),
       ]),
       Row(
