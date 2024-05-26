@@ -63,4 +63,16 @@ class StringData {
   static const String saveError = 'Kayıt sırasında bir hata oluştu.';
   //confirm save student
   static const String saveStudent = 'Öğrenciyi kaydetmek istediğinize emin misiniz?';
+  //fill all fields
+  static const String fillAllFields = 'Lütfen tüm alanları doldurunuz.';
+  //student number exist
+  static const String studentNumberExist = 'Öğrenci numarası zaten mevcut.';
+  //student add error
+  static const String studentAddError = 'Öğrenci eklenirken bir hata oluştu. Lütfen tekrar deneyin.';
+  // add success
+  static const String addSuccess = 'Başarıyla eklendi.';
+
+  //see books
+  static const String showBooks = 'Kitapları Gör';
+  static const String hideBooks = 'Kitapları Gizle';
 }

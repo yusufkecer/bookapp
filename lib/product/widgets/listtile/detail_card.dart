@@ -23,7 +23,7 @@ class DetailCard extends StatelessWidget {
       ]),
       Row(
         children: [
-          listTile("Alma Tarihi", "01.01.2010", Icons.calendar_today),
+          listTile("Alma Tarihi", "01.11.2015", Icons.calendar_today),
         ],
       ),
     ]);
@@ -52,8 +52,8 @@ class DetailCard extends StatelessWidget {
             ),
             Row(
               children: [
-                listTile("Alma Tarihi", "01.01.2010", Icons.calendar_month),
-                listTile("Teslim Tarihi", "01.01.2010", Icons.calendar_today),
+                listTile("Alma Tarihi", "01.11.2015", Icons.calendar_month),
+                listTile("Teslim Tarihi", "01.11.2015", Icons.calendar_today),
               ],
             ),
           ],

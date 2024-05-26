@@ -3,7 +3,8 @@ import 'package:bookapp/product/string_data/string.dart';
 import 'package:flutter/material.dart';
 
 class Popup {
-  void generalError(BuildContext context, String message) {
+  void generalError(String message) {
+    BuildContext context = NavigationKey.instance.navigatorKey.currentContext!;
     showDialog(
       context: context,
       builder: (context) {
@@ -33,6 +34,7 @@ class Popup {
           actions: [
             TextButton(
               onPressed: () {
+                Navigator.pop(context);
                 Navigator.pop(context);
               },
               child: const Text(StringData.ok),

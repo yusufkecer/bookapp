@@ -53,7 +53,7 @@ class BookDetails extends ConsumerWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: 'By ',
+                          text: 'Yazar ',
                           style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.w400,
@@ -67,7 +67,7 @@ class BookDetails extends ConsumerWidget {
                               ),
                         ),
                         TextSpan(
-                          text: ' in ',
+                          text: ' tür ',
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium

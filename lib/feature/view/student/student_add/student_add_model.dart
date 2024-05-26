@@ -29,7 +29,15 @@ abstract class StudentAddModel extends ConsumerState<StudentAddView> {
     if (result == null || !result) {
       return;
     }
-    bool? res = await studentNotifier?.sendFirebase(
+    //validation
+    if (nameController.text.isEmpty ||
+        surnameController.text.isEmpty ||
+        classController.text.isEmpty ||
+        number.text.isEmpty) {
+      popup.generalError(StringData.fillAllFields);
+      return;
+    }
+    Map? res = await studentNotifier?.sendFirebaseStudent(
       Student(
         name: nameController.text,
         surname: surnameController.text,
@@ -38,19 +46,14 @@ abstract class StudentAddModel extends ConsumerState<StudentAddView> {
         receivedBooks: const [],
       ),
     );
-    if (!mounted) {
-      print("object");
-      return;
-    }
-    if (res == null || !res) {
-      popup.generalError(context, StringData.saveError);
+
+    if (res == null && (res!["result"] == null || !res["result"])) {
+      popup.generalError(StringData.saveError);
       return;
     } else {
       print("in else");
 
       Future(() => Popup.generalSuccess(StringData.saveSuccess));
-      Popup.generalSuccess(StringData.saveSuccess);
-      Navigator.pop(context);
     }
   }
 }

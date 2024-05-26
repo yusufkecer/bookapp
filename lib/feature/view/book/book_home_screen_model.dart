@@ -11,11 +11,12 @@ abstract class HomeModel extends ConsumerState<HomeScreenView> {
     return AppBar(
       centerTitle: true,
       title: title,
-      leading: IconButton(
-        icon: themeNotifier.darkModeEnabled ? const Icon(Icons.brightness_7) : const Icon(Icons.brightness_2),
-        color: Theme.of(context).iconTheme.color,
-        onPressed: () => themeNotifier.toggleTheme(),
-      ),
+      //dark mode button
+      // leading: IconButton(
+      //   icon: themeNotifier.darkModeEnabled ? const Icon(Icons.brightness_7) : const Icon(Icons.brightness_2),
+      //   color: Theme.of(context).iconTheme.color,
+      //   onPressed: () => themeNotifier.toggleTheme(),
+      // ),
       actions: [
         IconButton(
           icon: const Icon(Icons.search),

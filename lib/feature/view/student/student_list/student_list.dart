@@ -1,3 +1,4 @@
+import 'package:bookapp/core/my_notifiers.dart';
 import 'package:bookapp/feature/view/student/student_detail.dart';
 import 'package:bookapp/feature/view/student/student_list/student_list_model.dart';
 
@@ -33,8 +34,18 @@ class _StudentListState extends StudentListModel {
 
   ListView studentList() {
     return ListView.builder(
-      itemCount: 1,
+      itemCount: ref.watch(MyNotifiers.instance.student).students.length,
       itemBuilder: (context, index) {
+        if (students!.last == students![index]) {
+          return Column(
+            children: [
+              studentDetails(index, context),
+              const SizedBox(
+                height: 100,
+              ),
+            ],
+          );
+        }
         return studentDetails(index, context);
       },
     );

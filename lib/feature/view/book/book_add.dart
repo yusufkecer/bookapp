@@ -98,12 +98,12 @@ class _AddBookFormState extends ConsumerState<AddBookForm> {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
                   final book = Book(
-                      title: _title,
-                      author: _author,
-                      description: _description,
-                      coverUrl: _coverUrl,
-                      category: _category,
-                      id: widget.book?.id ?? DateTime.now().toString());
+                    title: _title,
+                    author: _author,
+                    description: _description,
+                    coverUrl: _coverUrl,
+                    category: _category,
+                  );
 
                   if (widget.book == null) {
                     print("book $book");

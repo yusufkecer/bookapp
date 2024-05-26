@@ -28,7 +28,7 @@ class BookList extends ConsumerWidget {
                 ),
               );
             }),
-            itemCount: book.length,
+            itemCount: _books?.length ?? book.length,
             itemBuilder: ((context, index) {
               return BookItem(_books?.elementAt(index) ?? book[index]);
             }),

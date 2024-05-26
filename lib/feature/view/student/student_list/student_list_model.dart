@@ -23,7 +23,8 @@ abstract class StudentListModel extends ConsumerState<StudentList> {
     ProviderBase<StudentNotifier> studentProvider = MyNotifiers.instance.student;
     StudentNotifier studentNotifier = ref.watch(studentProvider);
     loading = studentNotifier.isLoading;
-    students = await studentNotifier.getFirebase();
+    await studentNotifier.getFirebase();
+    students = studentNotifier.students;
     Loading.instance.hideLoading();
   }
 }

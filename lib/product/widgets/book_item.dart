@@ -49,7 +49,7 @@ class BookItem extends ConsumerWidget {
                         ),
                       )
                     : null,
-                padding: const EdgeInsets.fromLTRB(20.0, 18.0, 0.0, 18.0),
+                padding: const EdgeInsets.fromLTRB(20.0, 10.0, 0.0, 18.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,13 +62,10 @@ class BookItem extends ConsumerWidget {
                           overflow: TextOverflow.ellipsis,
                           style: Theme.of(context).textTheme.headlineMedium,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
-                          child: Text(
-                            overflow: TextOverflow.ellipsis,
-                            'By ${_book.author}',
-                            style: Theme.of(context).textTheme.headlineSmall,
-                          ),
+                        Text(
+                          overflow: TextOverflow.ellipsis,
+                          'By ${_book.author}',
+                          style: Theme.of(context).textTheme.headlineSmall,
                         ),
                       ],
                     ),

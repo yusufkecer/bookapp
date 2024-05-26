@@ -38,7 +38,7 @@ class MaterialAppWithTheme extends ConsumerWidget {
       navigatorKey: NavigationKey.instance.navigatorKey,
       debugShowCheckedModeBanner: false,
       title: "Book Library",
-      darkTheme: ThemeData.dark(),
+      //  darkTheme: ThemeData.dark(),  request system
       theme: themeNotifier.darkModeEnabled ? MyTheme.baseDark : MyTheme.baseLight,
       home: const Home(),
     );
