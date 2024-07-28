@@ -1,4 +1,3 @@
-import 'package:bookapp/product/models/book.dart';
 import 'package:bookapp/product/models/book_history.dart';
 import 'package:bookapp/product/util/base/base_firebase_model.dart';
 import 'package:equatable/equatable.dart';

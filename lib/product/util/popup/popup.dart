@@ -3,6 +3,27 @@ import 'package:bookapp/product/string_data/string.dart';
 import 'package:flutter/material.dart';
 
 class Popup {
+  void errorDialog(String message) {
+    BuildContext context = NavigationKey.instance.navigatorKey.currentContext!;
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Image(image: AssetImage("assets/images/error.png")),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text(StringData.ok),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   void generalError(String message) {
     BuildContext context = NavigationKey.instance.navigatorKey.currentContext!;
     showDialog(

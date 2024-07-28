@@ -12,4 +12,9 @@ class MyTheme {
       Theme.of(NavigationKey.instance.navigatorKey.currentContext!).textTheme.titleMedium;
   static final TextStyle? verySmall =
       Theme.of(NavigationKey.instance.navigatorKey.currentContext!).textTheme.labelLarge;
+
+  static final TextStyle? titleBigGrey = Theme.of(NavigationKey.instance.navigatorKey.currentContext!)
+      .textTheme
+      .labelLarge
+      ?.copyWith(color: Colors.grey, fontSize: 30);
 }

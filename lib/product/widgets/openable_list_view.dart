@@ -1,4 +1,5 @@
 import 'package:bookapp/product/string_data/string.dart';
+import 'package:bookapp/product/widgets/buttons/confirm_button.dart';
 import 'package:flutter/material.dart';
 
 class OpenableListiView extends StatefulWidget {
@@ -11,7 +12,7 @@ class OpenableListiView extends StatefulWidget {
       {super.key,
       required this.child,
       this.duration = 200,
-      this.height = 200,
+      this.height = 250,
       this.hideText = "Gizle",
       this.showText = "Gör"});
 
@@ -40,7 +41,7 @@ class _OpenableListiViewState extends State<OpenableListiView> with SingleTicker
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
+            ConfirmButton(
               onPressed: () {
                 if (animatedcontroller == null) {
                   throw Exception("animatedcontroller is null");
@@ -52,9 +53,10 @@ class _OpenableListiViewState extends State<OpenableListiView> with SingleTicker
                   animatedcontroller!.reverse();
                 }
               },
-              child: ValueListenableBuilder(
+              text: ValueListenableBuilder(
                 valueListenable: isExpanded,
-                builder: (context, value, child) => Text(value ? StringData.hideBooks : StringData.showBooks),
+                builder: (context, value, child) => Text(value ? StringData.hideBooks : StringData.showBooks,
+                ),
               ),
             ),
           ],
