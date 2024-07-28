@@ -16,9 +16,7 @@ class Loading {
   Loading._internal();
 
   void showBookLoading() {
-    print("loading2");
     checkContext();
-    print("loading3");
     showDialog(
       context: navigationKey.navigatorKey.currentContext!,
       builder: (context) {

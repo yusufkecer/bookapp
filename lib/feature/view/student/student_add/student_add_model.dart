@@ -51,8 +51,6 @@ abstract class StudentAddModel extends ConsumerState<StudentAddView> {
       popup.generalError(StringData.saveError);
       return;
     } else {
-      print("in else");
-
       Future(() => Popup.generalSuccess(StringData.saveSuccess));
     }
   }
